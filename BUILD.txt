@@ -1,0 +1,12 @@
+
+*   Mikero's Tools
+https://mikero.bytex.digital/Downloads
+    DeOgg.1.00.5.24.Installer.exe
+    DePbo.7.16.0.17.Installer.exe
+    MakePbo.1.99.6.81.Installer.exe
+    pboProject.2.45.7.04.Installer.exe
+    Rapify.1.79.6.78.Installer.exe
+    
+*   Debug build
+    *   project folder "kn9t" should be in [Arma 3 installation folder]
+    *   run Arma 3 with file patching add the -filePatching startup parameter
