@@ -6,32 +6,23 @@
 KN9T_fn_setCombatMode = {
     params ["_modeCode"];
 
-    diag_log format ["KN9T_fn_setCombatMode Begin: %1", _modeCode];
+    // diag_log format ["KN9T_fn_setCombatMode Begin: %1", _modeCode];
 
-	_group1 = group player;
-    _group1 setCombatMode _modeCode;
+	_group = group player;
+    if (_modeCode == "BLUE") then {
+        _group setFormation "STAG COLUMN";
+        _group setBehaviour "SAFE";
+        (units _group) doFollow (leader _group);
+    };
+    if (_modeCode == "WHITE") then {
+        _group setFormation "LINE";
+        _group setBehaviour "AWARE";
+    };
+    if (_modeCode == "RED") then {
+        _group setFormation "LINE";
+        _group setBehaviour "AWARE";
+    };
 
-//    _selectedUnits = groupSelectedUnits player;
-//    if (count _selectedUnits == 0) exitWith {};
-//
-//    diag_log format ["KN9T_fn_setCombatMode 2: %1", _selectedUnits];
-//
-//	_allUnits = units group player;
-//    if (count _allUnits == 0) exitWith {};
-//
-//    diag_log format ["KN9T_fn_setCombatMode 3: %1", _allUnits];
-//	
-//    _tmpGroup = createGroup [(side player), true];
-//    _selectedUnits joinSilent _tmpGroup;
-//    _tmpGroup setCombatMode _modeCode;
-//	
-//	diag_log _selectedUnits;	
-//	_allUnits joinSilent player;
-//	
-//    {
-//		player groupSelectUnit [_x, false];
-//    } forEach (_selectedUnits);
-//
-    diag_log "KN9T_fn_setCombatMode: End";
+    _group setCombatMode _modeCode;
 	true
 };
