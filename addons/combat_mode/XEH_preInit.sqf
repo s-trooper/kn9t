@@ -1,4 +1,10 @@
 #include "script_component.hpp"
+ADDON = false;
 
-// Settings
-["COMPONENT_enableMod", "CHECKBOX", "Enable COMPONENT_NAME", COMPONENT_NAME, true, nil, nil] call CBA_fnc_addSetting;
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
+#include "initSettings.sqf"
+
+ADDON = true;

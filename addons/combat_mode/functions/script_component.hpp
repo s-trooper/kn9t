@@ -1,0 +1,1 @@
+#include "\z\kn9t\addons\combat_mode\script_component.hpp"
