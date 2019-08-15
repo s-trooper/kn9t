@@ -2,11 +2,10 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT;
+        name = CSTRING(COMPONENT);
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {};
         requiredAddons[] = {"cba_main"};
         author = "kn9t";
         VERSION_CONFIG;
