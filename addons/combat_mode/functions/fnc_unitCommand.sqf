@@ -13,16 +13,13 @@ params ["_modeCode"];
 private _group = group player;
 if (_modeCode == "BLUE") then {
     _group setFormation "STAG COLUMN";
-    _group setBehaviour "SAFE";
-    (units _group) doFollow (leader _group);
 };
 if (_modeCode == "WHITE") then {
     _group setFormation "LINE";
-    _group setBehaviour "AWARE";
 };
 if (_modeCode == "RED") then {
     _group setFormation "LINE";
-    _group setBehaviour "AWARE";
 };
 
 _group setCombatMode _modeCode;
+true // this stops keypressed propogation
