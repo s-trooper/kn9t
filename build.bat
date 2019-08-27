@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set PATH="c:\Dev\Local\src\Sandbox\a3\hemtt-v0.6.1\"
+set PATH="..\hemtt\"
 
 hemtt build --force
 :: hemtt build --release 

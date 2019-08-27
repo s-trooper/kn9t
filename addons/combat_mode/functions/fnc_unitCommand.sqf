@@ -9,16 +9,23 @@
 params ["_modeCode"];
 
 // diag_log format ["KN9T_fn_setCombatMode Begin: %1", _modeCode];
+// units _group doFollow leader _group;
+// setBehaviourStrong
 
 private _group = group player;
-if (_modeCode == "BLUE") then {
-    _group setFormation "STAG COLUMN";
-};
-if (_modeCode == "WHITE") then {
-    _group setFormation "LINE";
-};
-if (_modeCode == "RED") then {
-    _group setFormation "LINE";
+
+switch (_modeCode) do {
+    case "YELLOW";
+    case "GREEN";
+    case "BLUE": { 
+        _group setFormation "STAG COLUMN";
+    };
+    case "WHITE": {
+        _group setFormation "LINE";
+    };
+    case "RED": {    
+        _group setFormation "LINE";
+    };
 };
 
 _group setCombatMode _modeCode;
